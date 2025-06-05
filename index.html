@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>太屏盛世 緣定今世</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="index0423.css">
+    <script src="index0423.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+    $( document ).ready(function() {
+    
+    Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+        get: function () {
+            return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+        }
+    });
+    $('body').on('click touchstart', function () {
+                const videoElement = document.getElementById('thevideo');
+                if (videoElement.playing) {
+                }
+                else {
+                    videoElement.play();
+                }
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="music-onoroff">
+        <div>
+            <p>進入網站前，請先選擇<br>是否想搭配音樂瀏覽喜帖？</p>
+            <a href="javascript:void(0)" onclick="music()">是</a>
+            <a href="javascript:void(0)" onclick="document.getElementById('music-onoroff').style.display = 'none';">否</a>
+            <p style="font-size: 12px;">＊之後仍可透過右下角開關音樂唷！</p>
+        </div>
+    </div>
+
+    <div class="music-button" onclick="music()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg>
+        <div class="music-off-line" id="music-off-line"></div>
+    </div>
+    <audio loop>
+        <source src="https://littleroomweb.com/template/music/Yoav Ilan - Sky Blue.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <header id="header">
+        <h1>太緯</h1>
+        <div class="header-pic"></div>
+        <h1>浩屏</h1>
+    </header>
+
+    <div class="intro">
+        <div class="groom">
+            <div class="intro-pic"></div>
+            <div class="intro-content">
+                <h1>太緯</h1>
+                <p>
+                    introduce yourself<br>
+                    introduce yourself introduce yourself<br>
+                    介紹介紹介紹介紹介紹
+                </p>
+            </div>
+        </div>
+        <div class="bride">
+            <div class="intro-content">
+                <h1>浩屏</h1>
+                <p>
+                    introduce yourself<br>
+                    introduce yourself<br>
+                    介紹介紹介紹介紹介紹
+                </p>
+            </div>
+            <div class="intro-pic"></div>
+        </div>
+    </div>
+
+    <div class="invite">
+        <video playsinline autoplay muted loop id="thevideo">
+            <source src="770817310.881556.mp4" type="video/mp4">
+            <!-- Your browser does not support the video tag. -->
+        </video>
+        <!-- <h1>
+            12.17<br>
+            CELEBRATE<br>
+            WITH US<br>
+            AT<br>
+            W TAIPEI
+        </h1> -->
+    </div>
+
+    <div class="traffic">
+        <h1>HOW TO</h1>
+        <div class="traffic-box">
+            <!-- <div class="map">
+                <img src="map.webp" alt="map">
+                <a href="https://maps.app.goo.gl/ipGj2ySk5tRqdTzaA" target="_blank">open google maps</a>
+            </div> -->
+            <div class="traffic-guide">
+                太浩啦~我們要結婚啦!<br>
+                喜餅帶走,別忘了留下紅包祝福!<br>
+                歡迎大家前來祝福,期待與您分享這美好時刻。<br>
+                <p>
+                    曾浩屏<br>
+                    808 玉山銀行<br>
+                    0059-968-234693
+                </p>
+                <p>
+                    張太緯<br>
+                807 永豐銀行<br>
+                015-018-0092821
+                </p>
+                希望這份文案能夠傳達您的婚禮喜訊,如有任何需要修改的地方,歡迎隨時告知。
+            </div>
+        </div>
+        <h1>GET THERE</h1>
+    </div>
+
+    <!-- <div class="schedule">
+        <div class="schedule-title"><h1>WEDDING TIMELINE</h1></div>
+        <div class="timeline-area">
+            <div class="time">04:30<span>PM</span></div>
+            <div class="activity">CEREMONY</div>
+            <div class="time">05:00<span>PM</span></div>
+            <div class="activity">PHOTO</div>
+            <div class="time">06:00<span>PM</span></div>
+            <div class="activity">DINNER</div>
+            <div class="time">07:00<span>PM</span></div>
+            <div class="activity">FIRST DANCE</div>
+            <div class="time">07:30<span>PM</span></div>
+            <div class="activity">PARTY !</div>
+        </div>
+    </div>
+
+    <div class="dress-code">
+        <div class="dress-code-bg"></div>
+        <h1>DRESS CODE</h1>
+        <div class="dress-code-area">
+            <div class="dress-code-color" id="color1"><p>WHITE</p></div>
+            <div class="dress-code-color" id="color2"><p>BEIGE</p></div>
+            <div class="dress-code-color" id="color3"><p>GREY</p></div>
+            <div class="dress-code-color" id="color4"><p>DARK BLUE</p></div>
+        </div>
+        <p>kindly encourage you to dress in our color palette !</p>
+    </div>
+
+    <div class="photo-video">
+        <h1>PHOTOS + VIDEO</h1>
+        <div class="photo-area">
+            <div class="photo-box">
+                <div class="photo" id="photo1"></div>
+                <div class="photo" id="photo2"></div>
+                <div class="photo" id="photo3"></div>
+            </div>
+            <div>
+                <a href="javascript:void(0)" onclick="showgallery('photo-gallery')">MORE PHOTOS</a>
+            </div>
+        </div>
+
+        <div class="video-area">
+            <div>
+                <a href="javascript:void(0)" onclick="showgallery('video')">WATCH VIDEO</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="javascript:void(0)" id="closebutton" onclick="closegallery()">×</a>
+    <div id="gallery">
+        <div id="photo-gallery">
+            <div>
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+            </div>
+            <div>
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+                <img src="03.webp" alt="engagement photo">
+                <img src="01.webp" alt="engagement photo">
+            </div>
+            <p>photos by <a href="https://www.instagram.com/y.n_photography_/" target="_blank">富智</a></p>
+        </div>
+        <div id="video">
+            <iframe src="https://player.vimeo.com/video/714742920?h=b2a840ecef" width="640" height="360" loading="lazy" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+            <p>video by <a href="https://www.instagram.com/太緯.phahphinne/" target="_blank">太緯.phahphinne</a></p>
+        </div>
+    </div> -->
+
+    <div class="countdown">
+        <h1>WEDDING COUNTDOWN</h1>
+        <div id="countdown-content">
+            距離婚禮還剩<br>
+            <h1 id="days"></h1> 天　
+            <h1 id="hours"></h1> 小時　
+            <h1 id="mins"></h1> 分鐘　
+            <h1 id="secs"></h1> 秒<br>
+            期待與你們見面！
+        </div>
+    </div>
+
+    <!-- <div class="RSVP">
+        <h1>RSVP</h1>
+        <div class="formarea">
+            <form id="form1">
+                
+                <label for="yes" class="attend" onclick="AttendFunction('form1')">
+                    <input type="radio" id="yes" value="出席" name="ATTEND" checked>
+                    <span>Attend</span>
+                </label>
+                <label for="no" class="attend" onclick="AttendFunction('form1')">
+                    <input type="radio" id="no" class="not-attend-checked" value="無法出席" name="ATTEND">
+                    <span>Not Attend</span>
+                </label>
+
+                <div class="form-grid">
+                    <div class="form-title"><label for="Name">姓名</label></div>
+                    <div>
+                        <input type="text" id="Name" name="NAME">
+                    </div>
+
+                    <div class="form-title not-attend">參加人數（包含自己）</div>
+                    <div class="AandK not-attend">
+                        <label for="Adult">大人</label>
+                        <select id="Adult" name="ADULT">
+                            <option value=""></option>
+                            <option value="0" disabled hidden>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <label for="Kid">小孩</label>
+                        <select id="Kid" name="KID">
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-title not-attend veganinput"><label for="Vegan">素食人數</label></div>
+                    <div class="not-attend">
+                        <select id="Vegan" name="VEGAN">
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <div class="form-title"><label for="Invitation">是否需要紙本喜帖</label></div>
+                    <div>
+                        <select id="Invitation" name="INVITATION" onchange="InvitationFunction()">
+                            <option value=""></option>
+                            <option value="需要">需要</option>
+                            <option value="不需要">不需要</option>
+                        </select>
+                    </div>
+
+                    <div class="form-title"><label for="Address">喜帖寄送地址</label></div>
+                    <div>
+                        <input type="text" id="Address" name="ADDRESS" placeholder="請填郵遞區號＋地址">
+                    </div>
+                </div>
+                <div class="form-title">LEAVE A MESSAGE</div>
+                <textarea name="MESSAGE" rows="15" cols="20" placeholder="Leave a Message!"></textarea>
+
+            </form>
+            
+            <input type="submit" value="送出" id="submitbutton" onclick="submitform1()">
+
+        </div>
+    </div>
+
+    <div id="submit-success">
+        <div>
+            <h1>感謝填寫！</h1>
+            <div id="countdown"></div>
+            <a href="javascript:void(0)" id="submitokbutton" onclick="submitok()">確認</a>
+        </div>
+    </div> -->
+
+    <div id="loading">
+        <div id="loader"></div>
+    </div>
+    
+    <footer>
+        <a href="javascript:void(0)" onclick="JumpTo('header')">TOP</a>
+        <div>期待與你們見面</div>
+        <div class="name-circle">
+            <p>
+                太緯 & 浩屏
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>

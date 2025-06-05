@@ -1,0 +1,1001 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+html{scroll-behavior: smooth;}
+body,html{height: 100%;}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Julius Sans One', 'Noto Sans TC', sans-serif;
+    color: rgb(43, 43, 43);
+    background-color: rgb(234, 234, 234);
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: 400;
+    text-indent: 0;
+    letter-spacing: 0;
+}
+
+#music-onoroff{
+    width: 100%;
+    height: 100%;
+    color: rgb(234, 234, 234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+#music-onoroff>div{
+    background-color: rgb(43, 43, 43);
+    padding: 100px 40px;
+    position: relative;
+}
+
+#music-onoroff>div::before{
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(234, 234, 234,0.5);
+    width: 95%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#music-onoroff a:link, #music-onoroff a:visited{
+    position: relative;
+    display: inline-block;
+    color: rgb(234, 234, 234);
+    border: 1px solid rgb(234, 234, 234);
+    text-decoration: none;
+    padding: 7px 20px 5px 22px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+#music-onoroff a:link:last-of-type{
+    border: none;
+}
+
+#music-onoroff a:hover, #music-onoroff a:active{
+    color: rgb(43, 43, 43);
+    background-color: rgb(234, 234, 234);
+}
+
+.music-button{
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(43, 43, 43);
+    border: 1px solid rgba(43, 43, 43, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 110;
+    animation: musicbutton 1.5s;
+    mix-blend-mode: multiply;
+}
+
+@keyframes musicbutton{
+    0%{
+        transform: rotate(-10deg);
+    }20%{
+        transform: rotate(10deg);
+    }40%{
+        transform: rotate(-10deg);
+    }60%{
+        transform: rotate(10deg);
+    }80%{
+        transform: rotate(-10deg);
+    }100%{
+        transform: rotate(0);
+    }
+}
+
+.music-off-line{
+    position: absolute;
+    width: 80%;
+    border-top: 1px solid rgba(43, 43, 43, 0.9);
+    transform: rotate(45deg);
+    transform-origin: top left;
+    top: 20%;
+    left: 25%;
+    transition: 0.5s;
+}
+
+.music-off-line.playmusic{
+    width: 0;
+}
+
+header{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header-pic{
+    width: 250px;
+    height: 400px;
+    background-image: url('00.png');
+    background-position: center;
+    background-size: cover;
+    margin: 10px 30px;
+    opacity: 0;
+    animation: opacityanimation 1s forwards 1s;
+}
+
+@keyframes opacityanimation{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+header h1{
+    margin: 0;
+    opacity: 0;
+    animation: opacityanimation 1s forwards 2s;
+}
+
+header h1:first-of-type{
+    text-align: right;
+}
+
+.intro{
+    position: relative;
+    overflow: hidden;
+}
+
+.intro>div{
+    display: flex;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+
+
+.bride{
+    text-align: right;
+}
+
+.intro-pic{
+    width: 40%;
+    min-width: 180px;
+    height: 350px;
+    background-size: cover;
+    filter: grayscale(100%);
+    opacity: 0;
+}
+
+.groom .intro-pic{
+    background-image: url('groom.png');
+    background-position: center;
+    animation: opacityanimation 1s forwards 2.5s;
+}
+
+.bride .intro-pic{
+    background-image: url('bride.png');
+    background-position: 50% 10%;
+}
+
+.bride.active .intro-pic{
+    opacity: 1;
+    transition: 1s;
+}
+
+.intro-content{
+    width: 60%;
+    margin: 50px 20px 50px 50px;
+    line-height: 3;
+    position: relative;
+}
+
+.bride .intro-content{
+    margin: 50px 50px 50px 20px;
+}
+
+.intro-content::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgb(234, 234, 234);
+}
+
+.bride>.intro-content::before{
+    left: 0;
+}
+
+
+.groom.active .intro-content::before, .bride.active .intro-content::before{
+    width: 0;
+    transition: 1.5s;
+}
+
+
+.invite{
+    color: rgb(234, 234, 234);
+    line-height: 1.5;    
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.invite::before{
+    content: '';
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 1px solid rgb(234,234,234);
+}
+
+
+.invite video{
+    position: absolute;
+    width: auto;
+    height: 100%;
+    filter: grayscale(100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+.invite h1{
+    opacity: 0;
+    position: relative;
+}
+
+.invite.active h1{
+    opacity: 1;
+    transition: 2.5s;
+}
+
+
+
+
+.countdown{
+    padding: 100px 0;
+    text-align: center;
+    line-height: 3;
+    position: relative;
+    overflow: hidden;
+}
+
+#countdown-content>h1{
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 1s;
+}
+
+.countdown.active #countdown-content>h1{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.countdown.active #days{
+    transition-delay: 0.5s;
+}
+.countdown.active #hours{
+    transition-delay: 1s;
+}
+.countdown.active #mins{
+    transition-delay: 1.5s;
+}
+.countdown.active #secs{
+    transition-delay: 2s;
+}
+
+
+.traffic{
+    padding-top: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.traffic>h1{
+    writing-mode: vertical-lr;
+    margin: 0;
+}
+
+.traffic>h1:first-of-type{
+    transform: rotate(180deg);
+}
+
+
+.traffic-box{
+    color: rgb(234, 234, 234);
+    background-color: rgb(43, 43, 43);
+    padding: 50px 40px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map{
+    width: 100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+
+.map>img{
+    width: 100%;
+}
+
+.map a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(43, 43, 43);
+    background-color: rgba(234, 234, 234, 0.8);
+    text-decoration: none;
+    opacity: 1;
+    transition: 1.5s;
+}
+
+.map.active a{
+    opacity: 0;
+    transition: 2s 1s;
+}
+
+
+.map:hover a{
+    animation: maphint 1s forwards;
+}
+
+@keyframes maphint{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+.traffic-guide{
+    max-width: 250px;
+    margin: auto;
+}
+
+.schedule{
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-title>h1{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.timeline-area{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px 20px;
+}
+
+.time{
+    text-align: right;
+    opacity: 0;
+}
+
+.time>span{
+    font-size: 10px;
+}
+
+.activity{
+    opacity: 0;
+}
+
+
+.schedule.active div{
+    opacity: 1;
+    transition: 1s;
+}
+
+.schedule.active div:nth-child(3), .schedule.active div:nth-child(4){
+    transition-delay: 1s;
+}
+
+.schedule.active div:nth-child(5), .schedule.active div:nth-child(6){
+    transition-delay: 2s;
+}
+
+.schedule.active div:nth-child(7), .schedule.active div:nth-child(8){
+    transition-delay: 3s;
+}
+
+.schedule.active div:nth-child(9), .schedule.active div:nth-child(10){
+    transition-delay: 4s;
+}
+
+
+
+.dress-code{
+    color: rgb(234, 234, 234);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px 20px 60px 20px;
+    overflow: hidden;
+}
+
+.dress-code-bg{
+    position: absolute;
+    width: 105%;
+    height: 105%;
+    top: -3%;
+    background-image: url('03.webp');
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%) blur(2px);
+}
+
+.dress-code-bg::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.dress-code>h1{
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+    position: relative;
+}
+
+
+.dress-code>p{
+    position: relative;
+    opacity: 0;
+    text-align: center;
+}
+
+.dress-code>p.active{
+    opacity: 1;
+    transition: 1s;
+}
+
+
+.dress-code-color{
+    width: 200px;
+    padding: 20px 10px 5px 0;
+    margin: 50px 0;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.dress-code-color>p{
+    margin: 0;
+}
+
+#color1{
+    color: rgb(43, 43, 43);
+    background-color: #F4F4F3;
+}
+
+#color2{
+    color: rgb(43, 43, 43);
+    background-color: #E2DCD6;
+}
+
+#color3{
+    background-color: #1E1E1E;
+}
+
+#color4{
+    background-color: #1F1F30;
+}
+
+.photo-video{
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.photo-box{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px 20px;
+    max-width: 700px;
+    padding: 50px 20px;
+    margin: auto;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.photo-box::-webkit-scrollbar {
+    display: none;
+}
+
+.photo{
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    filter: grayscale(100%);
+    margin: auto;
+}
+
+#photo1{
+    background-image: url('04.webp');
+    background-position: 25% 50%;
+}
+#photo2{
+    background-image: url('05.webp');
+    background-position: center;
+}
+#photo3{
+    background-image: url('06.webp');
+    background-position: 65% 50%;
+}
+
+
+.photo-area a:link, .photo-area a:visited{
+    color: rgb(43, 43, 43);
+    background-color: rgba(244,244,244,0);
+    border: 1px solid rgb(43, 43, 43);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.photo-area a:hover, .photo-area a:active{
+    color: rgba(244,244,244);
+    background-color: rgb(43, 43, 43);
+}
+
+.video-area{
+    width: 80%;
+    max-width: 600px;
+    height: 350px;
+    background-image: url('07.webp');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    margin: 100px auto 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-area a:link, .video-area a:visited{
+    color: rgb(244,244,244);
+    background-color: rgba(43, 43, 43,0);
+    border: 1px solid rgb(244,244,244);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.video-area a:hover, .video-area a:active{
+    color: rgb(43, 43, 43);
+    background-color: rgba(244,244,244);
+}
+
+
+#closebutton:link, #closebutton:visited{
+    position: fixed;
+    z-index: 101;
+    right: 30px;
+    top: 0;
+    color: rgb(45, 45, 45);
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.5s;
+    display: none;
+}
+
+#closebutton:hover, #closebutton:active{
+    transform: scale(1.2);
+}
+
+#gallery{
+    text-align: center;
+    background-color: rgba(234, 234, 234,0.95);
+    position: fixed;
+    z-index: 100;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: none;
+}
+
+#gallery a:link, #gallery a:visited{
+    color: rgb(43, 43, 43);
+    text-decoration: underline;
+    transition: 0.5s;
+}
+
+#gallery a:hover, #gallery a:active{
+    color: rgba(43, 43, 43,0.5)
+}
+
+#photo-gallery{
+    text-indent: 0;
+    padding: 100px 50px;
+    display: none;
+}
+
+#photo-gallery > div{
+    float: left;
+    width: 100%;
+    margin: 5px;
+}
+
+#photo-gallery img{
+    width: 100%;
+}
+
+#video{
+    display: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+
+iframe{
+    width: 90%;
+    max-width: 640px;
+}
+
+.RSVP{
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.formarea{
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.attend{
+    position: relative;
+    display: inline-block;
+    color: rgba(43, 43, 43,0.3);
+    cursor: pointer;
+    margin: 30px 10px 0 10px;
+    letter-spacing: 0;
+}
+
+
+.attend input, .hideinput input{
+    position: absolute;
+    opacity: 0;
+}
+
+.attend span{
+    display: inline-block;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.attend:hover span{
+    color: rgba(43, 43, 43,0.6);
+    transform: translateY(-5px);
+}
+
+.attend input:checked ~ span{
+    color: rgba(43, 43, 43,1);
+    transform: translateY(0);
+}
+
+.form-grid{
+    text-indent: 0;
+    text-align: left;
+    margin: 50px 0;
+}
+
+.form-title{
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+input:not([type=submit]), select, textarea{
+    width: 100%;
+    font-family: 'Julius Sans One', 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding: 12px 20px 10px 20px;
+    border: 1px solid rgba(43, 43, 43, 0.5);
+    border-radius: 20px;
+    background-color: rgba(43, 43, 43, 0);
+    letter-spacing: 2px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+textarea::-webkit-scrollbar{
+    display: none;
+}
+
+input:focus, select:focus, textarea:focus{
+    outline: none;
+}
+
+select{
+    padding: 8px 0;
+    text-indent: 13px;
+    height: 38px;
+    -moz-appearance: none;
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
+textarea{
+    display: block;
+    resize: none;
+}
+
+::placeholder{
+    color: rgba(43, 43, 43,0.5);
+    font-family: 'Julius Sans One', 'Noto Sans TC', sans-serif;
+}
+
+.hideinput{
+    position: relative;
+    padding-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.hideinput span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border:1px solid rgb(43, 43, 43);
+    top: 1px;
+    left: 0;
+    transition: 0.5s;
+}
+
+input[type=radio] ~ span{
+    border-radius: 50%;
+}
+
+.hideinput:hover span{
+    background-color: rgba(43, 43, 43, 0.5);
+}
+
+.hideinput input:checked ~ span{
+    background-color: rgb(43, 43, 43);
+}
+
+.AandK select{
+    margin-right: 5px;
+    width: calc(95% / 2 - 45px);
+}
+
+input[type=submit]{
+    color: rgb(43, 43, 43);
+    background-color: rgba(43, 43, 43,0);
+    border: 1px solid rgb(43, 43, 43);
+    padding: 10px 20px;
+    margin-top: 40px;
+    border-radius: 20px;
+    text-indent: 5px;
+    letter-spacing: 5px;
+    font-family: 'Noto Serif TC',serif;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 1s;
+}
+
+#loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#loader{
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border-top: 8px solid rgba(255, 255, 255, 0);
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#submit-success{
+    width: 100%;
+    height: 100%;
+    color: rgb(234, 234, 234);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    letter-spacing: 3px;
+    text-indent: 3px;
+}
+
+#submit-success h1{
+    position: relative;
+    letter-spacing: 5px;
+    text-indent: 5px;
+    font-size: 20px;
+}
+
+
+#submit-success>div{
+    background-color: rgb(43, 43, 43);
+    padding: 50px 70px;
+    position: relative;
+}
+
+#submit-success>div::before{
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(234, 234, 234,0.5);
+    width: 95%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#countdown{
+    margin: 30px 0 40px 0;
+    position: relative;
+}
+
+#submit-success a:link, #submit-success a:visited{
+    position: relative;
+    color: rgb(234, 234, 234);
+    border: 1px solid rgb(234, 234, 234);
+    text-decoration: none;
+    padding: 12px 20px 10px 23px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+#submit-success a:hover, #submit-success a:active{
+    color: rgb(43, 43, 43);
+    background-color: rgb(234, 234, 234);
+}
+
+footer{
+    padding: 30px 0;
+    color: rgb(234, 234, 234);
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+}
+
+footer > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: rgba(234, 234, 234,0.7);
+    background-color: rgb(43, 43, 43);
+    font-size: 10px;
+    text-indent: 2px;
+    text-decoration: none;
+    top: -25px;
+    padding: 15px 15px 0 15px;
+    border-radius: 30px 30px 0 0;
+}
+
+
+.name-circle{
+    border: 1px solid rgba(234, 234, 234,0.5);
+    border-radius: 30px;
+    letter-spacing: 0;
+    margin: 10px 0;
+}
+
+.name-circle>p{
+    margin: 3px 20px;
+}
+
+
+
+footer div a:link, footer div a:visited{
+    text-decoration: underline;
+    color: rgb(234, 234, 234);
+    transition: 0.5s;
+}
+
+footer div a:hover, footer div a:active{
+    color:rgb(128, 128, 128);
+}
+
+@media (hover){
+    input[type=submit]:hover, input[type=submit]:active{
+        color: rgb(234, 234, 234);
+        background-color: rgb(43, 43, 43);
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 800px){
+    #photo-gallery > div{ width: 48%;}
+}
+
+@media screen and (min-width: 700px){
+    header{ flex-direction: row;}
+    header h1{ flex: 1;}
+    .invite video{ 
+        /* width: 100%; 
+        height: auto; */
+    }
+    .groom.active .intro-content::before, .bride.active .intro-content::before{ transition: 3s; }
+}
