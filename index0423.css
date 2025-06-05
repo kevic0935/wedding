@@ -324,7 +324,7 @@ header h1:first-of-type{
 
 
 .traffic{
-    /* padding-top: 150px; */
+    padding-top: 100px;
     position: relative;
     display: flex;
     justify-content: center;
