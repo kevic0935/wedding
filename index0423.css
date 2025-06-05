@@ -136,12 +136,12 @@ header{
 }
 
 .header-pic{
-    width: 250px;
-    height: 400px;
-    background-image: url('00.png');
+    /* width: 250px;
+    height: 400px; */
+    /* background-image: url('00.png'); */
     background-position: center;
     background-size: cover;
-    margin: 10px 30px;
+    /* margin: 10px 30px; */
     opacity: 0;
     animation: opacityanimation 1s forwards 1s;
 }
@@ -244,6 +244,7 @@ header h1:first-of-type{
     color: rgb(234, 234, 234);
     line-height: 1.5;    
     position: relative;
+    max-width: 500px;
     width: 100%;
     height: 700px;
     display: flex;
@@ -321,7 +322,7 @@ header h1:first-of-type{
 
 
 .traffic{
-    padding-top: 150px;
+    /* padding-top: 150px; */
     position: relative;
     display: flex;
     justify-content: center;
